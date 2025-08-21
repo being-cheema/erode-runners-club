@@ -1,0 +1,5 @@
+<!-- This is a placeholder for the PWA icon. In a real app, you would replace this with actual PNG icons -->
+<svg width="192" height="192" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" fill="#000"/>
+  <text x="96" y="105" font-family="Arial" font-size="48" fill="white" text-anchor="middle">ERC</text>
+</svg>
