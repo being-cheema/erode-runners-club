@@ -46,5 +46,3 @@ async def get_current_user_info(
 ):
     """Get current user information"""
     return UserResponse.model_validate(user)
-
-from app.auth import get_current_user
