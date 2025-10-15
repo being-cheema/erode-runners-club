@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models import User
 from app.schemas import UserLogin, Token, UserResponse
-from app.auth import authenticate_user, create_access_token
+from app.auth import authenticate_user, create_access_token, get_current_user
 from datetime import timedelta
 from app.config import settings
 
