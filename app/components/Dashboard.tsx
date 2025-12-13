@@ -3,6 +3,7 @@ import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Calendar, Activity, Trophy, BookOpen, Settings, ArrowRight } from 'lucide-react';
 import type { Screen } from '../App';
+import dashboardData from '../data/dashboard.json';
 
 interface DashboardProps {
   onNavigate: (screen: Screen) => void;
@@ -14,24 +15,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
     day: 'numeric'
   });
 
-  const mockData = {
-    nextRace: {
-      name: "5K Morning Run",
-      date: "Aug 22"
-    },
-    monthlyDistance: {
-      current: 45.6,
-      target: 100
-    },
-    leaderboard: [
-      { name: "Rajesh Kumar", distance: "156.2" },
-      { name: "Priya Sharma", distance: "142.8" },
-      { name: "Arjun Patel", distance: "138.5" }
-    ],
-    latestBlog: {
-      title: "10 Essential Tips for Marathon Training"
-    }
-  };
+  const mockData = dashboardData.dashboardData;
 
   return (
     <div className="min-h-screen bg-background">
@@ -65,8 +49,8 @@ export function Dashboard({ onNavigate }: DashboardProps) {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-medium mb-1">{mockData.nextRace.name}</h3>
-                <p className="text-sm text-muted-foreground">Next race • {mockData.nextRace.date}</p>
+                <h3 className="font-medium mb-1">{mockData.nextEvent.name}</h3>
+                <p className="text-sm text-muted-foreground">Next race • {mockData.nextEvent.date}</p>
               </div>
               <Calendar className="w-5 h-5 text-muted-foreground" />
             </div>
@@ -77,17 +61,17 @@ export function Dashboard({ onNavigate }: DashboardProps) {
         <div className="grid grid-cols-2 gap-4">
           <Card className="border border-border">
             <CardContent className="p-6">
-              <div className="text-2xl font-medium mb-1">{mockData.monthlyDistance.current}</div>
+              <div className="text-2xl font-medium mb-1">{mockData.monthlyProgress.currentDistance}</div>
               <div className="text-sm text-muted-foreground">km this month</div>
               <div className="text-xs text-muted-foreground mt-1">
-                {mockData.monthlyDistance.target - mockData.monthlyDistance.current} km to goal
+                {mockData.monthlyProgress.targetDistance - mockData.monthlyProgress.currentDistance} km to goal
               </div>
             </CardContent>
           </Card>
 
           <Card className="border border-border">
             <CardContent className="p-6">
-              <div className="text-2xl font-medium mb-1">#6</div>
+              <div className="text-2xl font-medium mb-1">#{mockData.userStats.currentRank}</div>
               <div className="text-sm text-muted-foreground">club ranking</div>
               <div className="text-xs text-muted-foreground mt-1">
                 this month

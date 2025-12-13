@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Avatar, AvatarFallback } from './ui/avatar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Trophy, Medal, Award, Crown, Zap, Target } from 'lucide-react';
+import leaderboardData from '../data/leaderboard.json';
 
 interface Runner {
   id: string;
@@ -11,7 +12,7 @@ interface Runner {
   pace: string;
   avatar?: string;
   rank: number;
-  change: number; // +1, -1, 0 for rank change
+  rankChange: number;
 }
 
 interface Challenge {
@@ -20,67 +21,16 @@ interface Challenge {
   description: string;
   criteria: string;
   prize: string;
-  winner?: string;
-  completed?: boolean;
+  winner?: { userId: string; name: string };
+  status?: string;
 }
 
 export function Leaderboard() {
   const [activeTab, setActiveTab] = useState<'monthly' | 'alltime' | 'challenges'>('monthly');
 
-  const monthlyRunners: Runner[] = [
-    { id: '1', name: 'Rajesh Kumar', distance: 156.2, pace: '5:12', rank: 1, change: 1 },
-    { id: '2', name: 'Priya Sharma', distance: 142.8, pace: '5:28', rank: 2, change: -1 },
-    { id: '3', name: 'Arjun Patel', distance: 138.5, pace: '5:35', rank: 3, change: 0 },
-    { id: '4', name: 'Meera Singh', distance: 124.3, pace: '5:42', rank: 4, change: 2 },
-    { id: '5', name: 'Kiran Reddy', distance: 118.7, pace: '5:48', rank: 5, change: -1 },
-    { id: '6', name: 'Arun Gupta', distance: 112.4, pace: '5:55', rank: 6, change: 0 },
-  ];
-
-  const allTimeRunners: Runner[] = [
-    { id: '1', name: 'Priya Sharma', distance: 2847.3, pace: '5:22', rank: 1, change: 0 },
-    { id: '2', name: 'Rajesh Kumar', distance: 2654.8, pace: '5:18', rank: 2, change: 0 },
-    { id: '3', name: 'Arjun Patel', distance: 2398.2, pace: '5:40', rank: 3, change: 1 },
-    { id: '4', name: 'Kiran Reddy', distance: 2156.7, pace: '5:52', rank: 4, change: -1 },
-    { id: '5', name: 'Meera Singh', distance: 1987.4, pace: '5:45', rank: 5, change: 0 },
-    { id: '6', name: 'Arun Gupta', distance: 1743.6, pace: '6:01', rank: 6, change: 1 },
-  ];
-
-  const challenges: Challenge[] = [
-    {
-      id: '1',
-      title: 'Distance Champion',
-      description: 'Complete 200km in a single month',
-      criteria: '200km monthly distance',
-      prize: 'Premium Running Gear',
-      winner: 'Rajesh Kumar',
-      completed: true
-    },
-    {
-      id: '2',
-      title: 'Speed Demon',
-      description: 'Achieve sub-5:00 average pace for 10K',
-      criteria: 'Sub-5:00 pace on 10K run',
-      prize: 'Elite Racing Shoes',
-      completed: false
-    },
-    {
-      id: '3',
-      title: 'Consistency King',
-      description: 'Run every day for 30 consecutive days',
-      criteria: '30-day running streak',
-      prize: 'Smart Fitness Watch',
-      completed: false
-    },
-    {
-      id: '4',
-      title: 'Early Bird',
-      description: 'Complete 20 morning runs (before 7 AM)',
-      criteria: '20 morning runs',
-      prize: 'Sunrise Runner Jersey',
-      winner: 'Priya Sharma',
-      completed: true
-    }
-  ];
+  const monthlyRunners: Runner[] = leaderboardData.monthlyLeaderboard as Runner[];
+  const allTimeRunners: Runner[] = leaderboardData.allTimeLeaderboard as Runner[];
+  const challenges: Challenge[] = leaderboardData.challenges as Challenge[];
 
   const getInitials = (name: string) => {
     return name.split(' ').map(n => n[0]).join('').toUpperCase();
@@ -130,13 +80,13 @@ export function Leaderboard() {
 
               <div className="text-right">
                 <div className="font-medium">{runner.distance} km</div>
-                {runner.change > 0 && (
-                  <div className="text-xs text-muted-foreground">↑ +{runner.change}</div>
+                {runner.rankChange > 0 && (
+                  <div className="text-xs text-muted-foreground">↑ +{runner.rankChange}</div>
                 )}
-                {runner.change < 0 && (
-                  <div className="text-xs text-muted-foreground">↓ {runner.change}</div>
+                {runner.rankChange < 0 && (
+                  <div className="text-xs text-muted-foreground">↓ {runner.rankChange}</div>
                 )}
-                {runner.change === 0 && (
+                {runner.rankChange === 0 && (
                   <div className="text-xs text-muted-foreground">—</div>
                 )}
               </div>
@@ -241,7 +191,7 @@ export function Leaderboard() {
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <h3 className="font-medium">{challenge.title}</h3>
-                          {challenge.completed && (
+                          {challenge.status === 'completed' && (
                             <div className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
                               Completed
                             </div>
@@ -260,7 +210,7 @@ export function Leaderboard() {
                           {challenge.winner && (
                             <div className="text-right">
                               <div className="text-muted-foreground">Won by</div>
-                              <div className="font-medium">{challenge.winner}</div>
+                              <div className="font-medium">{challenge.winner.name}</div>
                             </div>
                           )}
                         </div>

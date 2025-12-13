@@ -6,6 +6,7 @@ import { Badge } from './ui/badge';
 import { TrendingUp, TrendingDown, Activity, Timer, Zap, Target } from 'lucide-react';
 import { motion } from 'motion/react';
 import { StaggeredList } from './AnimationProvider';
+import statisticsData from '../data/statistics.json';
 import {
   WeeklyProgressChart,
   MonthlyTargetChart,
@@ -18,35 +19,10 @@ import {
 export function Statistics() {
   const [activeTab, setActiveTab] = useState<'overview' | 'detailed' | 'trends'>('overview');
 
-  const currentMonthStats = {
-    totalDistance: 156.3,
-    totalTime: '18h 45m',
-    avgPace: '5:42',
-    totalRuns: 18,
-    calories: 12850,
-    elevation: 1245,
-    personalBests: 3,
-    consistency: 85,
-  };
-
-  const comparisonData = [
-    { metric: 'Distance', current: 156.3, previous: 142.8, unit: 'km', trend: 'up' },
-    { metric: 'Pace', current: '5:42', previous: '5:58', unit: '/km', trend: 'up' },
-    { metric: 'Runs', current: 18, previous: 16, unit: '', trend: 'up' },
-    { metric: 'Calories', current: 12850, previous: 11200, unit: '', trend: 'up' },
-  ];
-
-  const recentAchievements = [
-    { title: 'Fastest 5K', date: '2 days ago', value: '24:32', improvement: '-15s' },
-    { title: 'Longest Run', date: '1 week ago', value: '21.1 km', improvement: '+2.3 km' },
-    { title: 'Best Month', date: 'This month', value: '156.3 km', improvement: '+13.5 km' },
-  ];
-
-  const weeklyGoals = [
-    { goal: 'Run 40km', progress: 32, target: 40, unit: 'km' },
-    { goal: '5 Workouts', progress: 4, target: 5, unit: 'runs' },
-    { goal: 'Sub 5:30 avg', current: '5:42', target: '5:30', unit: '/km' },
-  ];
+  const currentMonthStats = statisticsData.currentMonthStats;
+  const comparisonData = statisticsData.monthlyComparison;
+  const recentAchievements = statisticsData.recentAchievements;
+  const weeklyGoals = statisticsData.weeklyGoals;
 
   return (
     <div className="min-h-screen bg-background">

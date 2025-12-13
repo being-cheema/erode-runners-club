@@ -4,38 +4,43 @@ import { Avatar, AvatarFallback } from './ui/avatar';
 import { Button } from './ui/button';
 import { User, MapPin, Calendar, Activity, Trophy, Target, Settings, ExternalLink, Edit } from 'lucide-react';
 import type { Screen } from '../App';
+import usersData from '../data/users.json';
+
+interface UserProfile {
+  id: string;
+  name: string;
+  email: string;
+  bio: string;
+  location: string;
+  joinDate: string;
+  avatar: string;
+  stravaConnected: boolean;
+  stats: {
+    totalDistance: number;
+    totalRuns: number;
+    racesCompleted: number;
+    currentMonthDistance: number;
+    currentMonthTarget: number;
+    monthlyRanking: number;
+  };
+  personalBests: {
+    fiveK: string;
+    tenK: string;
+    halfMarathon: string;
+  };
+  achievements: Array<{
+    id: string;
+    name: string;
+    unlockedDate: string;
+  }>;
+}
 
 interface ProfileProps {
   onNavigate: (screen: Screen) => void;
 }
 
 export function Profile({ onNavigate }: ProfileProps) {
-  const userProfile = {
-    name: 'Arun Kumar',
-    email: 'arun.kumar@email.com',
-    bio: 'Passionate runner from Erode. Love early morning runs and challenging myself with new distances.',
-    location: 'Erode, Tamil Nadu',
-    joinDate: 'January 2024',
-    stats: {
-      totalDistance: 387.2,
-      totalRuns: 89,
-      racesCompleted: 12,
-      personalBests: {
-        fiveK: '24:32',
-        tenK: '52:15',
-        halfMarathon: '1:58:43'
-      }
-    },
-    achievements: [
-      { id: '1', name: 'First 5K', date: 'Jan 2024' },
-      { id: '2', name: '100K Month', date: 'Mar 2024' },
-      { id: '3', name: 'Speed Demon', date: 'May 2024' },
-      { id: '4', name: 'Half Marathon', date: 'Jun 2024' },
-      { id: '5', name: 'Consistency', date: 'Jul 2024' },
-      { id: '6', name: 'Early Bird', date: 'Aug 2024' }
-    ],
-    stravaConnected: true
-  };
+  const userProfile = usersData.currentUser as UserProfile;
 
   return (
     <div className="min-h-screen bg-background">
@@ -140,7 +145,7 @@ export function Profile({ onNavigate }: ProfileProps) {
                   <div className="text-sm text-muted-foreground">Personal Record</div>
                 </div>
                 <div className="text-right">
-                  <div className="font-medium">{userProfile.stats.personalBests.fiveK}</div>
+                  <div className="font-medium">{userProfile.personalBests.fiveK}</div>
                 </div>
               </div>
 
@@ -150,7 +155,7 @@ export function Profile({ onNavigate }: ProfileProps) {
                   <div className="text-sm text-muted-foreground">Personal Record</div>
                 </div>
                 <div className="text-right">
-                  <div className="font-medium">{userProfile.stats.personalBests.tenK}</div>
+                  <div className="font-medium">{userProfile.personalBests.tenK}</div>
                 </div>
               </div>
 
@@ -160,7 +165,7 @@ export function Profile({ onNavigate }: ProfileProps) {
                   <div className="text-sm text-muted-foreground">Personal Record</div>
                 </div>
                 <div className="text-right">
-                  <div className="font-medium">{userProfile.stats.personalBests.halfMarathon}</div>
+                  <div className="font-medium">{userProfile.personalBests.halfMarathon}</div>
                 </div>
               </div>
             </div>
@@ -183,7 +188,7 @@ export function Profile({ onNavigate }: ProfileProps) {
                     <div className="w-2 h-2 bg-foreground rounded-full"></div>
                   </div>
                   <div className="text-sm font-medium">{achievement.name}</div>
-                  <div className="text-xs text-muted-foreground">{achievement.date}</div>
+                  <div className="text-xs text-muted-foreground">{achievement.unlockedDate}</div>
                 </div>
               ))}
             </div>

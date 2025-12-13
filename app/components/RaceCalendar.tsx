@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { ArrowLeft, ChevronLeft, ChevronRight, Clock, MapPin, ArrowRight } from 'lucide-react';
+import racesData from '../data/races.json';
 
 interface Race {
   id: string;
   name: string;
-  date: Date;
+  date: string;
   time: string;
   distance: string;
   location: string;
@@ -19,30 +20,7 @@ export function RaceCalendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedRace, setSelectedRace] = useState<Race | null>(null);
 
-  const mockRaces: Race[] = [
-    {
-      id: '1',
-      name: '5K Morning Challenge',
-      date: new Date(2025, 7, 22),
-      time: '06:00 AM',
-      distance: '5K',
-      location: 'Erode Sports Complex',
-      description: 'Start your day with an energizing 5K run through the scenic routes of Erode.',
-      registered: 45,
-      maxParticipants: 100
-    },
-    {
-      id: '2',
-      name: 'Half Marathon Elite',
-      date: new Date(2025, 7, 29),
-      time: '05:30 AM',
-      distance: '21K',
-      location: 'Kaveri Riverfront',
-      description: 'Challenge yourself with our signature half marathon along the beautiful Kaveri riverfront.',
-      registered: 78,
-      maxParticipants: 150
-    }
-  ];
+  const mockRaces: Race[] = racesData.upcomingRaces;
 
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -58,11 +36,12 @@ export function RaceCalendar() {
   };
 
   const getRaceForDay = (day: number) => {
-    return mockRaces.find(race => 
-      race.date.getDate() === day && 
-      race.date.getMonth() === currentDate.getMonth() &&
-      race.date.getFullYear() === currentDate.getFullYear()
-    );
+    return mockRaces.find(race => {
+      const raceDate = new Date(race.date);
+      return raceDate.getDate() === day && 
+             raceDate.getMonth() === currentDate.getMonth() &&
+             raceDate.getFullYear() === currentDate.getFullYear();
+    });
   };
 
   const navigateMonth = (direction: 'prev' | 'next') => {
@@ -140,7 +119,7 @@ export function RaceCalendar() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-muted-foreground">
                 <Clock className="w-4 h-4" />
-                <span>{selectedRace.date.toLocaleDateString()} at {selectedRace.time}</span>
+                <span>{new Date(selectedRace.date).toLocaleDateString()} at {selectedRace.time}</span>
               </div>
               <div className="flex items-center space-x-3 text-muted-foreground">
                 <MapPin className="w-4 h-4" />
@@ -234,7 +213,7 @@ export function RaceCalendar() {
                     <div className="flex-1">
                       <h3 className="font-medium">{race.name}</h3>
                       <p className="text-sm text-muted-foreground">
-                        {race.date.toLocaleDateString()} • {race.distance}
+                        {new Date(race.date).toLocaleDateString()} • {race.distance}
                       </p>
                     </div>
                     <Button

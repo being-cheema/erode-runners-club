@@ -3,15 +3,16 @@ import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { ArrowLeft, Clock, User, Share2, BookOpen } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import blogsData from '../data/blogs.json';
 
 interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
   category: 'Training' | 'Nutrition' | 'Gear' | 'Race Recap';
-  author: string;
+  author: string | { name: string };
   date: string;
-  readTime: string;
+  readTime: string | number;
   image: string;
   content?: string;
 }
@@ -19,52 +20,17 @@ interface BlogPost {
 export function BlogsSection() {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
-  const blogPosts: BlogPost[] = [
-    {
-      id: '1',
-      title: '10 Essential Tips for Marathon Training',
-      excerpt: 'Preparing for your first marathon? Here are the essential tips every runner should know before starting their training journey.',
-      category: 'Training',
-      author: 'Coach Ramesh',
-      date: 'August 12, 2025',
-      readTime: '5 min',
-      image: 'https://images.unsplash.com/photo-1692170226404-969b6e5cde95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxydW5uaW5nJTIwbWFyYXRob24lMjBmaW5pc2glMjBsaW5lfGVufDF8fHx8MTc1NTI3MTEyOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      content: 'Marathon training is a journey that requires dedication, patience, and proper planning. Here are the essential tips to help you succeed:\n\n1. Build your base gradually\n2. Include cross-training\n3. Listen to your body\n4. Fuel properly\n5. Get adequate rest\n\nRemember, consistency is key to marathon success.'
-    },
-    {
-      id: '2',
-      title: 'Pre-Run Nutrition: What to Eat and When',
-      excerpt: 'Maximize your running performance with proper nutrition. Learn what to eat before your runs for optimal energy and endurance.',
-      category: 'Nutrition',
-      author: 'Dr. Priya Nutritionist',
-      date: 'August 10, 2025',
-      readTime: '7 min',
-      image: 'https://images.unsplash.com/photo-1563674698276-18a7b1df0106?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxydW5uaW5nJTIwbnV0cml0aW9uJTIwaGVhbHRoeSUyMGZvb2R8ZW58MXx8fHwxNzU1MjcxMzIwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      content: 'Proper nutrition before running can make or break your performance. Here\'s what you need to know about fueling your runs effectively.'
-    },
-    {
-      id: '3',
-      title: 'Best Running Shoes for Indian Roads',
-      excerpt: 'Navigate Indian terrain with confidence. Our comprehensive guide to choosing the perfect running shoes for local conditions.',
-      category: 'Gear',
-      author: 'Gear Expert Arjun',
-      date: 'August 8, 2025',
-      readTime: '6 min',
-      image: 'https://images.unsplash.com/photo-1559743345-60e0907c4853?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxydW5uaW5nJTIwZ2VhciUyMHNob2VzJTIwZXF1aXBtZW50fGVufDF8fHx8MTc1NTI3MTMyM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      content: 'Choosing the right running shoes for Indian roads requires understanding the unique challenges of our terrain and climate.'
-    },
-    {
-      id: '4',
-      title: 'Erode Half Marathon 2025: Race Recap',
-      excerpt: 'Relive the excitement of our biggest race yet! Over 500 runners participated in this year\'s half marathon.',
-      category: 'Race Recap',
-      author: 'Event Team',
-      date: 'August 5, 2025',
-      readTime: '4 min',
-      image: 'https://images.unsplash.com/photo-1700914299505-d7d0f642b98f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxydW5uaW5nJTIwdHJhY2slMjBzdGFkaXVtJTIwcmFjZXxlbnwxfHx8fDE3NTUyNzExNzV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      content: 'The Erode Half Marathon 2025 was our most successful event to date, with record participation and fantastic weather conditions.'
-    }
-  ];
+  const blogPosts: BlogPost[] = blogsData.blogPosts.map(p => ({
+    id: p.id,
+    title: p.title,
+    excerpt: p.excerpt,
+    category: p.category as 'Training' | 'Nutrition' | 'Gear' | 'Race Recap',
+    author: typeof p.author === 'string' ? p.author : p.author.name,
+    date: p.publishDate,
+    readTime: `${p.readTime} min`,
+    image: p.image,
+    content: p.content
+  }));
 
   const getCategoryColor = (category: BlogPost['category']) => {
     switch (category) {
@@ -116,7 +82,7 @@ export function BlogsSection() {
             <div className="flex items-center space-x-4 text-muted-foreground text-sm">
               <div className="flex items-center space-x-1">
                 <User className="w-4 h-4" />
-                <span>{selectedPost.author}</span>
+                <span>{typeof selectedPost.author === 'string' ? selectedPost.author : selectedPost.author.name}</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Clock className="w-4 h-4" />
@@ -191,7 +157,7 @@ export function BlogsSection() {
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
-                <span>{blogPosts[0].author}</span>
+                <span>{typeof blogPosts[0].author === 'string' ? blogPosts[0].author : blogPosts[0].author.name}</span>
                 <span>•</span>
                 <span>{blogPosts[0].readTime}</span>
               </div>

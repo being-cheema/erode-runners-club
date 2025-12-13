@@ -3,25 +3,28 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { ArrowLeft, Target, Clock, Activity, CheckCircle2, Calendar } from 'lucide-react';
+import trainingData from '../data/trainingPlans.json';
 
 interface TrainingPlan {
   id: string;
   name: string;
-  raceType: '5K' | '10K' | 'Half Marathon' | 'Marathon';
-  level: 'Beginner' | 'Intermediate' | 'Advanced';
+  raceType: string;
+  level: string;
   duration: string;
   description: string;
   weeks: Week[];
 }
 
 interface Week {
-  week: number;
+  weekNumber: number;
+  weekGoal?: string;
+  totalDistance?: number;
   workouts: Workout[];
 }
 
 interface Workout {
   day: string;
-  type: 'Run' | 'Rest' | 'Cross-Train';
+  type: string;
   distance?: string;
   pace?: string;
   description: string;
@@ -32,86 +35,7 @@ export function TrainingPlans() {
   const [selectedPlan, setSelectedPlan] = useState<TrainingPlan | null>(null);
   const [selectedWeek, setSelectedWeek] = useState<number>(1);
 
-  const trainingPlans: TrainingPlan[] = [
-    {
-      id: '1',
-      name: '5K for Beginners',
-      raceType: '5K',
-      level: 'Beginner',
-      duration: '8 weeks',
-      description: 'Perfect for first-time runners. Build up to running 5K continuously with walk-run intervals.',
-      weeks: [
-        {
-          week: 1,
-          workouts: [
-            { day: 'Monday', type: 'Run', distance: '2 km', pace: 'Easy + Walk', description: 'Run 1 min, walk 2 min (repeat 6x)', completed: true },
-            { day: 'Tuesday', type: 'Rest', description: 'Complete rest or gentle stretching' },
-            { day: 'Wednesday', type: 'Run', distance: '2 km', pace: 'Easy + Walk', description: 'Run 1 min, walk 2 min (repeat 6x)' },
-            { day: 'Thursday', type: 'Cross-Train', description: '20 min walking or cycling' },
-            { day: 'Friday', type: 'Rest', description: 'Complete rest' },
-            { day: 'Saturday', type: 'Run', distance: '2.5 km', pace: 'Easy + Walk', description: 'Run 1.5 min, walk 2 min (repeat 5x)' },
-            { day: 'Sunday', type: 'Rest', description: 'Complete rest or gentle yoga' }
-          ]
-        },
-        {
-          week: 2,
-          workouts: [
-            { day: 'Monday', type: 'Run', distance: '2.5 km', pace: 'Easy + Walk', description: 'Run 2 min, walk 2 min (repeat 5x)' },
-            { day: 'Tuesday', type: 'Rest', description: 'Complete rest or gentle stretching' },
-            { day: 'Wednesday', type: 'Run', distance: '2.5 km', pace: 'Easy + Walk', description: 'Run 2 min, walk 2 min (repeat 5x)' },
-            { day: 'Thursday', type: 'Cross-Train', description: '25 min walking or cycling' },
-            { day: 'Friday', type: 'Rest', description: 'Complete rest' },
-            { day: 'Saturday', type: 'Run', distance: '3 km', pace: 'Easy + Walk', description: 'Run 2.5 min, walk 1.5 min (repeat 5x)' },
-            { day: 'Sunday', type: 'Rest', description: 'Complete rest or gentle yoga' }
-          ]
-        }
-      ]
-    },
-    {
-      id: '2',
-      name: '10K Intermediate',
-      raceType: '10K',
-      level: 'Intermediate',
-      duration: '10 weeks',
-      description: 'For runners who can comfortably run 5K. Build endurance and speed for a strong 10K finish.',
-      weeks: [
-        {
-          week: 1,
-          workouts: [
-            { day: 'Monday', type: 'Run', distance: '4 km', pace: 'Easy', description: 'Easy conversational pace' },
-            { day: 'Tuesday', type: 'Cross-Train', description: '30 min cycling or swimming' },
-            { day: 'Wednesday', type: 'Run', distance: '3 km', pace: 'Tempo', description: '10 min warm-up, 10 min tempo, 10 min cool-down' },
-            { day: 'Thursday', type: 'Rest', description: 'Complete rest or yoga' },
-            { day: 'Friday', type: 'Run', distance: '3 km', pace: 'Easy', description: 'Easy recovery run' },
-            { day: 'Saturday', type: 'Cross-Train', description: 'Strength training or yoga' },
-            { day: 'Sunday', type: 'Run', distance: '6 km', pace: 'Long', description: 'Long slow distance run' }
-          ]
-        }
-      ]
-    },
-    {
-      id: '3',
-      name: 'Half Marathon Advanced',
-      raceType: 'Half Marathon',
-      level: 'Advanced',
-      duration: '12 weeks',
-      description: 'For experienced runners targeting a sub-1:45 half marathon. Includes speed work and tempo runs.',
-      weeks: [
-        {
-          week: 1,
-          workouts: [
-            { day: 'Monday', type: 'Run', distance: '8 km', pace: 'Easy', description: 'Easy base building run' },
-            { day: 'Tuesday', type: 'Run', distance: '6 km', pace: 'Intervals', description: '6 x 800m at 5K pace, 400m recovery' },
-            { day: 'Wednesday', type: 'Cross-Train', description: '45 min cycling or swimming' },
-            { day: 'Thursday', type: 'Run', distance: '10 km', pace: 'Tempo', description: '3 km warm-up, 5 km tempo, 2 km cool-down' },
-            { day: 'Friday', type: 'Rest', description: 'Complete rest or gentle yoga' },
-            { day: 'Saturday', type: 'Run', distance: '5 km', pace: 'Easy', description: 'Easy shakeout run' },
-            { day: 'Sunday', type: 'Run', distance: '16 km', pace: 'Long', description: 'Long run at conversational pace' }
-          ]
-        }
-      ]
-    }
-  ];
+  const trainingPlans: TrainingPlan[] = trainingData.trainingPlans;
 
   const getWorkoutIcon = (type: Workout['type']) => {
     switch (type) {
@@ -159,23 +83,23 @@ export function TrainingPlans() {
           <div className="flex space-x-2 overflow-x-auto">
             {selectedPlan.weeks.map((week) => (
               <Button
-                key={week.week}
-                variant={selectedWeek === week.week ? "default" : "outline"}
+                key={week.weekNumber}
+                variant={selectedWeek === week.weekNumber ? "default" : "outline"}
                 size="sm"
-                onClick={() => setSelectedWeek(week.week)}
+                onClick={() => setSelectedWeek(week.weekNumber)}
                 className="whitespace-nowrap"
               >
-                Week {week.week}
+                Week {week.weekNumber}
               </Button>
             ))}
           </div>
 
           {/* Weekly Schedule */}
           {selectedPlan.weeks
-            .filter(week => week.week === selectedWeek)
+            .filter(week => week.weekNumber === selectedWeek)
             .map((week) => (
-              <div key={week.week} className="space-y-4">
-                <h2 className="font-medium">Week {week.week} Schedule</h2>
+              <div key={week.weekNumber} className="space-y-4">
+                <h2 className="font-medium">Week {week.weekNumber} Schedule</h2>
                 {week.workouts.map((workout, index) => (
                   <Card key={index} className={`border border-border ${workout.completed ? 'bg-muted/50' : ''}`}>
                     <CardContent className="p-4">
@@ -225,13 +149,13 @@ export function TrainingPlans() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-medium">
-                    {selectedPlan.weeks.find(w => w.week === selectedWeek)?.workouts.filter(w => w.completed).length || 0}
+                    {selectedPlan.weeks.find(w => w.weekNumber === selectedWeek)?.workouts.filter(w => w.completed).length || 0}
                   </div>
                   <div className="text-sm text-muted-foreground">Completed</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-medium">
-                    {selectedPlan.weeks.find(w => w.week === selectedWeek)?.workouts.length || 0}
+                    {selectedPlan.weeks.find(w => w.weekNumber === selectedWeek)?.workouts.length || 0}
                   </div>
                   <div className="text-sm text-muted-foreground">Total Workouts</div>
                 </div>
