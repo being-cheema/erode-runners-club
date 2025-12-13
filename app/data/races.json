@@ -1,0 +1,78 @@
+{
+  "upcomingRaces": [
+    {
+      "id": "race_001",
+      "name": "5K Morning Challenge",
+      "date": "2025-08-22",
+      "time": "06:00 AM",
+      "distance": "5K",
+      "location": "Erode Sports Complex",
+      "description": "Start your day with an energizing 5K run through the scenic routes of Erode.",
+      "registered": 45,
+      "maxParticipants": 100,
+      "entryFee": 200,
+      "status": "registration_open",
+      "registrationDeadline": "2025-08-21",
+      "courseMap": "https://example.com/map1",
+      "organizer": {
+        "name": "Erode Runners Club",
+        "contact": "contact@eroderunners.com"
+      }
+    },
+    {
+      "id": "race_002",
+      "name": "Half Marathon Elite",
+      "date": "2025-08-29",
+      "time": "05:30 AM",
+      "distance": "21K",
+      "location": "Kaveri Riverfront",
+      "description": "Challenge yourself with our signature half marathon along the beautiful Kaveri riverfront.",
+      "registered": 78,
+      "maxParticipants": 150,
+      "entryFee": 500,
+      "status": "registration_open",
+      "registrationDeadline": "2025-08-28",
+      "courseMap": "https://example.com/map2",
+      "organizer": {
+        "name": "Erode Runners Club",
+        "contact": "contact@eroderunners.com"
+      }
+    },
+    {
+      "id": "race_003",
+      "name": "10K Speed Track",
+      "date": "2025-09-15",
+      "time": "06:30 AM",
+      "distance": "10K",
+      "location": "Erode Race Track",
+      "description": "A competitive 10K race on a certified track. Perfect for improving your pace.",
+      "registered": 32,
+      "maxParticipants": 80,
+      "entryFee": 300,
+      "status": "registration_open",
+      "registrationDeadline": "2025-09-14",
+      "courseMap": "https://example.com/map3",
+      "organizer": {
+        "name": "Tamil Nadu Athletics",
+        "contact": "athletics@tn.gov.in"
+      }
+    }
+  ],
+  "pastRaces": [
+    {
+      "id": "race_004",
+      "name": "Erode Half Marathon 2025",
+      "date": "2025-07-28",
+      "time": "05:30 AM",
+      "distance": "21K",
+      "location": "Kaveri Riverfront",
+      "description": "Our most successful race event with record participation and fantastic weather conditions.",
+      "totalParticipants": 542,
+      "completionRate": 96.5,
+      "status": "completed",
+      "results": "https://example.com/results/race_004",
+      "winnersCount": 3,
+      "averageFinishTime": "2:15:30"
+    }
+  ]
+}

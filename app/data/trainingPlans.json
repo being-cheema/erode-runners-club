@@ -1,0 +1,204 @@
+{
+  "trainingPlans": [
+    {
+      "id": "plan_001",
+      "name": "5K for Beginners",
+      "raceType": "5K",
+      "level": "Beginner",
+      "duration": "8 weeks",
+      "description": "Perfect for first-time runners. Build up to running 5K continuously with walk-run intervals.",
+      "difficulty": 1,
+      "targetDistance": "5K",
+      "estimatedFinishTime": "35-40 minutes",
+      "weeks": [
+        {
+          "weekNumber": 1,
+          "weekGoal": "Build base foundation",
+          "totalDistance": 8.5,
+          "workouts": [
+            {
+              "day": "Monday",
+              "type": "Run",
+              "distance": "2 km",
+              "pace": "Easy + Walk",
+              "description": "Run 1 min, walk 2 min (repeat 6x)",
+              "duration": "15 minutes",
+              "completed": true
+            },
+            {
+              "day": "Tuesday",
+              "type": "Rest",
+              "description": "Complete rest or gentle stretching",
+              "completed": true
+            },
+            {
+              "day": "Wednesday",
+              "type": "Run",
+              "distance": "2 km",
+              "pace": "Easy + Walk",
+              "description": "Run 1 min, walk 2 min (repeat 6x)",
+              "duration": "15 minutes",
+              "completed": false
+            },
+            {
+              "day": "Thursday",
+              "type": "Cross-Train",
+              "description": "20 min walking or cycling",
+              "duration": "20 minutes",
+              "completed": false
+            },
+            {
+              "day": "Friday",
+              "type": "Rest",
+              "description": "Complete rest",
+              "completed": false
+            },
+            {
+              "day": "Saturday",
+              "type": "Run",
+              "distance": "2.5 km",
+              "pace": "Easy + Walk",
+              "description": "Run 1.5 min, walk 2 min (repeat 5x)",
+              "duration": "18 minutes",
+              "completed": false
+            },
+            {
+              "day": "Sunday",
+              "type": "Rest",
+              "description": "Complete rest or gentle yoga",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "weekNumber": 2,
+          "weekGoal": "Increase run intervals",
+          "totalDistance": 10.0,
+          "workouts": [
+            {
+              "day": "Monday",
+              "type": "Run",
+              "distance": "2.5 km",
+              "pace": "Easy + Walk",
+              "description": "Run 2 min, walk 2 min (repeat 5x)",
+              "duration": "16 minutes"
+            },
+            {
+              "day": "Tuesday",
+              "type": "Rest",
+              "description": "Complete rest or gentle stretching"
+            },
+            {
+              "day": "Wednesday",
+              "type": "Run",
+              "distance": "2.5 km",
+              "pace": "Easy + Walk",
+              "description": "Run 2 min, walk 2 min (repeat 5x)",
+              "duration": "16 minutes"
+            },
+            {
+              "day": "Thursday",
+              "type": "Cross-Train",
+              "description": "25 min walking or cycling",
+              "duration": "25 minutes"
+            },
+            {
+              "day": "Friday",
+              "type": "Rest",
+              "description": "Complete rest"
+            },
+            {
+              "day": "Saturday",
+              "type": "Run",
+              "distance": "3 km",
+              "pace": "Easy + Walk",
+              "description": "Run 2.5 min, walk 1.5 min (repeat 5x)",
+              "duration": "20 minutes"
+            },
+            {
+              "day": "Sunday",
+              "type": "Rest",
+              "description": "Complete rest or gentle yoga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plan_002",
+      "name": "10K Intermediate",
+      "raceType": "10K",
+      "level": "Intermediate",
+      "duration": "10 weeks",
+      "description": "For runners who can comfortably run 5K. Build endurance and speed for a strong 10K finish.",
+      "difficulty": 2,
+      "targetDistance": "10K",
+      "estimatedFinishTime": "50-60 minutes",
+      "weeks": [
+        {
+          "weekNumber": 1,
+          "weekGoal": "Base building",
+          "totalDistance": 25.0,
+          "workouts": [
+            {
+              "day": "Monday",
+              "type": "Run",
+              "distance": "4 km",
+              "pace": "Easy",
+              "description": "Easy conversational pace",
+              "duration": "24 minutes"
+            },
+            {
+              "day": "Tuesday",
+              "type": "Rest",
+              "description": "Rest day"
+            },
+            {
+              "day": "Wednesday",
+              "type": "Run",
+              "distance": "5 km",
+              "pace": "Easy",
+              "description": "Easy conversational pace",
+              "duration": "30 minutes"
+            },
+            {
+              "day": "Thursday",
+              "type": "Cross-Train",
+              "description": "30 min cycling or swimming"
+            },
+            {
+              "day": "Friday",
+              "type": "Rest",
+              "description": "Rest day"
+            },
+            {
+              "day": "Saturday",
+              "type": "Run",
+              "distance": "8 km",
+              "pace": "Easy",
+              "description": "Long run at comfortable pace",
+              "duration": "48 minutes"
+            },
+            {
+              "day": "Sunday",
+              "type": "Rest",
+              "description": "Complete rest or yoga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plan_003",
+      "name": "Half Marathon Advanced",
+      "raceType": "Half Marathon",
+      "level": "Advanced",
+      "duration": "12 weeks",
+      "description": "Comprehensive half marathon training for experienced runners. Includes speed work and long runs.",
+      "difficulty": 3,
+      "targetDistance": "21K",
+      "estimatedFinishTime": "1:45-2:00 hours",
+      "weeks": []
+    }
+  ]
+}

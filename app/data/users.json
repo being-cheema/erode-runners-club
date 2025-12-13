@@ -1,0 +1,99 @@
+{
+  "currentUser": {
+    "id": "user_001",
+    "name": "Arun Kumar",
+    "email": "arun.kumar@email.com",
+    "bio": "Passionate runner from Erode. Love early morning runs and challenging myself with new distances.",
+    "location": "Erode, Tamil Nadu",
+    "joinDate": "2024-01-15",
+    "avatar": "AK",
+    "stravaConnected": true,
+    "stats": {
+      "totalDistance": 387.2,
+      "totalRuns": 89,
+      "racesCompleted": 12,
+      "currentMonthDistance": 45.6,
+      "currentMonthTarget": 100,
+      "monthlyRanking": 6
+    },
+    "personalBests": {
+      "fiveK": "24:32",
+      "tenK": "52:15",
+      "halfMarathon": "1:58:43"
+    },
+    "achievements": [
+      {
+        "id": "ach_001",
+        "name": "First 5K",
+        "unlockedDate": "2024-01-20"
+      },
+      {
+        "id": "ach_002",
+        "name": "100K Month",
+        "unlockedDate": "2024-03-15"
+      },
+      {
+        "id": "ach_003",
+        "name": "Speed Demon",
+        "unlockedDate": "2024-05-10"
+      },
+      {
+        "id": "ach_004",
+        "name": "Half Marathon",
+        "unlockedDate": "2024-06-22"
+      },
+      {
+        "id": "ach_005",
+        "name": "Consistency",
+        "unlockedDate": "2024-07-30"
+      },
+      {
+        "id": "ach_006",
+        "name": "Early Bird",
+        "unlockedDate": "2024-08-12"
+      }
+    ]
+  },
+  "communityUsers": [
+    {
+      "id": "user_002",
+      "name": "Rajesh Kumar",
+      "avatar": "RK",
+      "location": "Erode",
+      "totalDistance": 2654.8,
+      "monthlyDistance": 156.2
+    },
+    {
+      "id": "user_003",
+      "name": "Priya Sharma",
+      "avatar": "PS",
+      "location": "Erode",
+      "totalDistance": 2847.3,
+      "monthlyDistance": 142.8
+    },
+    {
+      "id": "user_004",
+      "name": "Arjun Patel",
+      "avatar": "AP",
+      "location": "Erode",
+      "totalDistance": 2398.2,
+      "monthlyDistance": 138.5
+    },
+    {
+      "id": "user_005",
+      "name": "Meera Singh",
+      "avatar": "MS",
+      "location": "Erode",
+      "totalDistance": 1987.4,
+      "monthlyDistance": 124.3
+    },
+    {
+      "id": "user_006",
+      "name": "Kiran Reddy",
+      "avatar": "KR",
+      "location": "Erode",
+      "totalDistance": 2156.7,
+      "monthlyDistance": 118.7
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "userActivities": [
+    {
+      "id": "activity_001",
+      "userId": "user_001",
+      "date": "2025-08-14",
+      "type": "run",
+      "name": "Morning Run - Kaveri Riverside",
+      "distance": 8.5,
+      "unit": "km",
+      "duration": 3090,
+      "durationFormatted": "51:30",
+      "pace": "6:05",
+      "paceUnit": "/km",
+      "calories": 715,
+      "elevation": 45,
+      "avgHeartRate": 158,
+      "maxHeartRate": 172,
+      "startTime": "06:00",
+      "endTime": "06:51",
+      "route": "Kaveri Riverside Track",
+      "weather": "Clear, 28°C",
+      "notes": "Great morning run, felt energetic",
+      "completed": true
+    },
+    {
+      "id": "activity_002",
+      "userId": "user_001",
+      "date": "2025-08-13",
+      "type": "run",
+      "name": "Evening Tempo Run",
+      "distance": 5.2,
+      "unit": "km",
+      "duration": 1884,
+      "durationFormatted": "31:24",
+      "pace": "6:02",
+      "paceUnit": "/km",
+      "calories": 438,
+      "elevation": 12,
+      "avgHeartRate": 162,
+      "maxHeartRate": 178,
+      "startTime": "17:30",
+      "endTime": "18:02",
+      "route": "Town Circuit",
+      "weather": "Partly Cloudy, 32°C",
+      "notes": "Felt a bit tired but completed the run",
+      "completed": true
+    },
+    {
+      "id": "activity_003",
+      "userId": "user_001",
+      "date": "2025-08-12",
+      "type": "run",
+      "name": "Long Run - Erode Extended Route",
+      "distance": 10.1,
+      "unit": "km",
+      "duration": 3462,
+      "durationFormatted": "57:42",
+      "pace": "5:43",
+      "paceUnit": "/km",
+      "calories": 847,
+      "elevation": 78,
+      "avgHeartRate": 155,
+      "maxHeartRate": 168,
+      "startTime": "06:15",
+      "endTime": "07:13",
+      "route": "Extended Erode Route",
+      "weather": "Clear, 26°C",
+      "notes": "Excellent long run, felt strong throughout",
+      "completed": true
+    },
+    {
+      "id": "activity_004",
+      "userId": "user_001",
+      "date": "2025-08-11",
+      "type": "rest",
+      "name": "Rest Day",
+      "notes": "Recovery day, light stretching",
+      "completed": true
+    },
+    {
+      "id": "activity_005",
+      "userId": "user_001",
+      "date": "2025-08-10",
+      "type": "cross-train",
+      "name": "Cycling Session",
+      "distance": 15.0,
+      "unit": "km",
+      "duration": 1800,
+      "durationFormatted": "30:00",
+      "calories": 320,
+      "avgHeartRate": 140,
+      "notes": "Easy recovery ride on road bike",
+      "completed": true
+    }
+  ],
+  "activityTypes": [
+    {
+      "id": "type_1",
+      "name": "run",
+      "label": "Run",
+      "icon": "Activity",
+      "color": "#FF6B6B"
+    },
+    {
+      "id": "type_2",
+      "name": "cross-train",
+      "label": "Cross Training",
+      "icon": "Zap",
+      "color": "#4ECDC4"
+    },
+    {
+      "id": "type_3",
+      "name": "rest",
+      "label": "Rest Day",
+      "icon": "Wind",
+      "color": "#95E1D3"
+    }
+  ]
+}

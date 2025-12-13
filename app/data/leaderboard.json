@@ -1,0 +1,186 @@
+{
+  "monthlyLeaderboard": [
+    {
+      "id": "rank_001",
+      "rank": 1,
+      "userId": "user_002",
+      "name": "Rajesh Kumar",
+      "distance": 156.2,
+      "pace": "5:12",
+      "avatar": "RK",
+      "rankChange": 1,
+      "runs": 28
+    },
+    {
+      "id": "rank_002",
+      "rank": 2,
+      "userId": "user_003",
+      "name": "Priya Sharma",
+      "distance": 142.8,
+      "pace": "5:28",
+      "avatar": "PS",
+      "rankChange": -1,
+      "runs": 26
+    },
+    {
+      "id": "rank_003",
+      "rank": 3,
+      "userId": "user_004",
+      "name": "Arjun Patel",
+      "distance": 138.5,
+      "pace": "5:35",
+      "avatar": "AP",
+      "rankChange": 0,
+      "runs": 24
+    },
+    {
+      "id": "rank_004",
+      "rank": 4,
+      "userId": "user_005",
+      "name": "Meera Singh",
+      "distance": 124.3,
+      "pace": "5:42",
+      "avatar": "MS",
+      "rankChange": 2,
+      "runs": 22
+    },
+    {
+      "id": "rank_005",
+      "rank": 5,
+      "userId": "user_006",
+      "name": "Kiran Reddy",
+      "distance": 118.7,
+      "pace": "5:48",
+      "avatar": "KR",
+      "rankChange": -1,
+      "runs": 20
+    },
+    {
+      "id": "rank_006",
+      "rank": 6,
+      "userId": "user_001",
+      "name": "Arun Gupta",
+      "distance": 112.4,
+      "pace": "5:55",
+      "avatar": "AG",
+      "rankChange": 0,
+      "runs": 19
+    }
+  ],
+  "allTimeLeaderboard": [
+    {
+      "id": "alltime_001",
+      "rank": 1,
+      "userId": "user_003",
+      "name": "Priya Sharma",
+      "distance": 2847.3,
+      "pace": "5:22",
+      "avatar": "PS",
+      "rankChange": 0,
+      "totalRuns": 512
+    },
+    {
+      "id": "alltime_002",
+      "rank": 2,
+      "userId": "user_002",
+      "name": "Rajesh Kumar",
+      "distance": 2654.8,
+      "pace": "5:18",
+      "avatar": "RK",
+      "rankChange": 0,
+      "totalRuns": 487
+    },
+    {
+      "id": "alltime_003",
+      "rank": 3,
+      "userId": "user_004",
+      "name": "Arjun Patel",
+      "distance": 2398.2,
+      "pace": "5:40",
+      "avatar": "AP",
+      "rankChange": 1,
+      "totalRuns": 425
+    },
+    {
+      "id": "alltime_004",
+      "rank": 4,
+      "userId": "user_006",
+      "name": "Kiran Reddy",
+      "distance": 2156.7,
+      "pace": "5:52",
+      "avatar": "KR",
+      "rankChange": -1,
+      "totalRuns": 385
+    },
+    {
+      "id": "alltime_005",
+      "rank": 5,
+      "userId": "user_005",
+      "name": "Meera Singh",
+      "distance": 1987.4,
+      "pace": "5:45",
+      "avatar": "MS",
+      "rankChange": 0,
+      "totalRuns": 356
+    },
+    {
+      "id": "alltime_006",
+      "rank": 6,
+      "userId": "user_001",
+      "name": "Arun Gupta",
+      "distance": 1743.6,
+      "pace": "6:01",
+      "avatar": "AG",
+      "rankChange": 1,
+      "totalRuns": 312
+    }
+  ],
+  "challenges": [
+    {
+      "id": "ch_001",
+      "title": "Distance Champion",
+      "description": "Complete 200km in a single month",
+      "criteria": "200km monthly distance",
+      "prize": "Premium Running Gear",
+      "status": "completed",
+      "winner": {
+        "userId": "user_002",
+        "name": "Rajesh Kumar"
+      },
+      "completionDate": "2024-08-28"
+    },
+    {
+      "id": "ch_002",
+      "title": "Speed Demon",
+      "description": "Achieve sub-5:00 average pace for 10K",
+      "criteria": "Sub-5:00 pace on 10K run",
+      "prize": "Elite Racing Shoes",
+      "status": "ongoing",
+      "progress": 45,
+      "winner": null
+    },
+    {
+      "id": "ch_003",
+      "title": "Consistency King",
+      "description": "Run every day for 30 consecutive days",
+      "criteria": "30-day running streak",
+      "prize": "Smart Fitness Watch",
+      "status": "ongoing",
+      "progress": 18,
+      "winner": null
+    },
+    {
+      "id": "ch_004",
+      "title": "Early Bird",
+      "description": "Complete 20 morning runs (before 7 AM)",
+      "criteria": "20 morning runs",
+      "prize": "Sunrise Runner Jersey",
+      "status": "completed",
+      "winner": {
+        "userId": "user_003",
+        "name": "Priya Sharma"
+      },
+      "completionDate": "2024-08-05"
+    }
+  ]
+}

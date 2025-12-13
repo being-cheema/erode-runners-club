@@ -1,0 +1,136 @@
+{
+  "currentMonthStats": {
+    "month": "August",
+    "year": 2025,
+    "totalDistance": 156.3,
+    "totalTime": "18:45",
+    "totalTimeMinutes": 1125,
+    "avgPace": "5:42",
+    "totalRuns": 18,
+    "calories": 12850,
+    "elevation": 1245,
+    "personalBests": 3,
+    "consistency": 85
+  },
+  "monthlyComparison": [
+    {
+      "metric": "Distance",
+      "current": 156.3,
+      "previous": 142.8,
+      "unit": "km",
+      "trend": "up",
+      "changePercentage": 9.4
+    },
+    {
+      "metric": "Pace",
+      "current": "5:42",
+      "previous": "5:58",
+      "unit": "/km",
+      "trend": "up",
+      "changePercentage": 4.5
+    },
+    {
+      "metric": "Runs",
+      "current": 18,
+      "previous": 16,
+      "unit": "count",
+      "trend": "up",
+      "changePercentage": 12.5
+    },
+    {
+      "metric": "Calories",
+      "current": 12850,
+      "previous": 11200,
+      "unit": "kcal",
+      "trend": "up",
+      "changePercentage": 14.7
+    }
+  ],
+  "recentAchievements": [
+    {
+      "id": "ach_rec_001",
+      "title": "Fastest 5K",
+      "date": "2025-08-12",
+      "value": "24:32",
+      "improvement": "-15s",
+      "reference": "Previous PB"
+    },
+    {
+      "id": "ach_rec_002",
+      "title": "Longest Run",
+      "date": "2025-08-05",
+      "value": "21.1",
+      "unit": "km",
+      "improvement": "+2.3 km",
+      "reference": "Previous longest"
+    },
+    {
+      "id": "ach_rec_003",
+      "title": "Best Month",
+      "date": "2025-08-31",
+      "value": "156.3",
+      "unit": "km",
+      "improvement": "+13.5 km",
+      "reference": "Previous month"
+    }
+  ],
+  "weeklyGoals": [
+    {
+      "id": "goal_001",
+      "title": "Distance Goal",
+      "goal": "Run 40km",
+      "progress": 32,
+      "target": 40,
+      "unit": "km",
+      "progressPercentage": 80
+    },
+    {
+      "id": "goal_002",
+      "title": "Weekly Workouts",
+      "goal": "5 Workouts",
+      "progress": 4,
+      "target": 5,
+      "unit": "runs",
+      "progressPercentage": 80
+    },
+    {
+      "id": "goal_003",
+      "title": "Average Pace",
+      "goal": "Sub 5:30 avg",
+      "current": "5:42",
+      "target": "5:30",
+      "unit": "/km",
+      "progressPercentage": 75
+    }
+  ],
+  "weeklyRunData": [
+    {
+      "week": 1,
+      "distance": 32.5,
+      "runs": 5,
+      "avgPace": "5:48",
+      "elevation": 245
+    },
+    {
+      "week": 2,
+      "distance": 38.2,
+      "runs": 6,
+      "avgPace": "5:35",
+      "elevation": 312
+    },
+    {
+      "week": 3,
+      "distance": 41.1,
+      "runs": 4,
+      "avgPace": "5:42",
+      "elevation": 398
+    },
+    {
+      "week": 4,
+      "distance": 44.5,
+      "runs": 3,
+      "avgPace": "5:40",
+      "elevation": 290
+    }
+  ]
+}

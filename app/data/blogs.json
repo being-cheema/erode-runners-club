@@ -1,0 +1,80 @@
+{
+  "blogPosts": [
+    {
+      "id": "blog_001",
+      "title": "10 Essential Tips for Marathon Training",
+      "excerpt": "Preparing for your first marathon? Here are the essential tips every runner should know before starting their training journey.",
+      "category": "Training",
+      "author": {
+        "id": "auth_001",
+        "name": "Coach Ramesh",
+        "bio": "Professional running coach with 15+ years experience"
+      },
+      "publishDate": "2025-08-12",
+      "updatedDate": "2025-08-12",
+      "readTime": 5,
+      "image": "https://images.unsplash.com/photo-1692170226404-969b6e5cde95",
+      "content": "Marathon training is a journey that requires dedication, patience, and proper planning. Here are the essential tips to help you succeed:\n\n1. Build your base gradually\n2. Include cross-training\n3. Listen to your body\n4. Fuel properly\n5. Get adequate rest\n\nRemember, consistency is key to marathon success.",
+      "likes": 245,
+      "views": 1820,
+      "status": "published"
+    },
+    {
+      "id": "blog_002",
+      "title": "Pre-Run Nutrition: What to Eat and When",
+      "excerpt": "Maximize your running performance with proper nutrition. Learn what to eat before your runs for optimal energy and endurance.",
+      "category": "Nutrition",
+      "author": {
+        "id": "auth_002",
+        "name": "Dr. Priya Nutritionist",
+        "bio": "Sports nutrition specialist"
+      },
+      "publishDate": "2025-08-10",
+      "updatedDate": "2025-08-10",
+      "readTime": 7,
+      "image": "https://images.unsplash.com/photo-1563674698276-18a7b1df0106",
+      "content": "Proper nutrition before running can make or break your performance. Here's what you need to know about fueling your runs effectively.",
+      "likes": 189,
+      "views": 1456,
+      "status": "published"
+    },
+    {
+      "id": "blog_003",
+      "title": "Best Running Shoes for Indian Roads",
+      "excerpt": "Navigate Indian terrain with confidence. Our comprehensive guide to choosing the perfect running shoes for local conditions.",
+      "category": "Gear",
+      "author": {
+        "id": "auth_003",
+        "name": "Gear Expert Arjun",
+        "bio": "Running equipment specialist"
+      },
+      "publishDate": "2025-08-08",
+      "updatedDate": "2025-08-08",
+      "readTime": 6,
+      "image": "https://images.unsplash.com/photo-1559743345-60e0907c4853",
+      "content": "Choosing the right running shoes for Indian roads requires understanding the unique challenges of our terrain and climate.",
+      "likes": 156,
+      "views": 1203,
+      "status": "published"
+    },
+    {
+      "id": "blog_004",
+      "title": "Erode Half Marathon 2025: Race Recap",
+      "excerpt": "Relive the excitement of our biggest race yet! Over 500 runners participated in this year's half marathon.",
+      "category": "Race Recap",
+      "author": {
+        "id": "auth_004",
+        "name": "Event Team",
+        "bio": "Official Erode Runners Club event organizers"
+      },
+      "publishDate": "2025-08-05",
+      "updatedDate": "2025-08-05",
+      "readTime": 4,
+      "image": "https://images.unsplash.com/photo-1700914299505-d7d0f642b98f",
+      "content": "The Erode Half Marathon 2025 was our most successful event to date, with record participation and fantastic weather conditions.",
+      "likes": 312,
+      "views": 2145,
+      "status": "published"
+    }
+  ]
+}

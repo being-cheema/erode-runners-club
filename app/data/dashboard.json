@@ -1,0 +1,106 @@
+{
+  "dashboardData": {
+    "nextEvent": {
+      "id": "event_001",
+      "name": "5K Morning Run",
+      "date": "2025-08-22",
+      "type": "race",
+      "daysUntil": 8
+    },
+    "monthlyProgress": {
+      "currentDistance": 45.6,
+      "targetDistance": 100,
+      "progressPercentage": 45.6,
+      "unit": "km",
+      "daysInMonth": 31,
+      "daysRemaining": 18
+    },
+    "userStats": {
+      "currentRank": 6,
+      "monthlyDistance": 45.6,
+      "totalRuns": 12,
+      "consistency": 85
+    },
+    "recentActivity": [
+      {
+        "id": "activity_001",
+        "date": "2025-08-14",
+        "type": "run",
+        "distance": 8.5,
+        "duration": "51:30",
+        "pace": "6:05",
+        "calories": 715
+      },
+      {
+        "id": "activity_002",
+        "date": "2025-08-13",
+        "type": "run",
+        "distance": 5.2,
+        "duration": "31:24",
+        "pace": "6:02",
+        "calories": 438
+      },
+      {
+        "id": "activity_003",
+        "date": "2025-08-12",
+        "type": "run",
+        "distance": 10.1,
+        "duration": "57:42",
+        "pace": "5:43",
+        "calories": 847
+      }
+    ],
+    "topCommunityMembers": [
+      {
+        "rank": 1,
+        "name": "Rajesh Kumar",
+        "distance": "156.2 km",
+        "avatar": "RK"
+      },
+      {
+        "rank": 2,
+        "name": "Priya Sharma",
+        "distance": "142.8 km",
+        "avatar": "PS"
+      },
+      {
+        "rank": 3,
+        "name": "Arjun Patel",
+        "distance": "138.5 km",
+        "avatar": "AP"
+      }
+    ],
+    "latestBlog": {
+      "id": "blog_001",
+      "title": "10 Essential Tips for Marathon Training",
+      "readTime": 5,
+      "category": "Training"
+    },
+    "quickActions": [
+      {
+        "id": "action_001",
+        "label": "Start Run",
+        "icon": "Activity",
+        "action": "start_run"
+      },
+      {
+        "id": "action_002",
+        "label": "View Calendar",
+        "icon": "Calendar",
+        "action": "navigate_races"
+      },
+      {
+        "id": "action_003",
+        "label": "Leaderboard",
+        "icon": "Trophy",
+        "action": "navigate_leaderboard"
+      },
+      {
+        "id": "action_004",
+        "label": "Articles",
+        "icon": "BookOpen",
+        "action": "navigate_blogs"
+      }
+    ]
+  }
+}
